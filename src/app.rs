@@ -34,7 +34,6 @@ pub fn app() -> Html {
                     }
 
                     let args = serde_wasm_bindgen::to_value(&GreetArgs { name: &*name }).unwrap();
-                    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
                     let new_msg = invoke("greet", args).await.as_string().unwrap();
                     greet_msg.set(new_msg);
                 });
@@ -63,14 +62,11 @@ pub fn app() -> Html {
             <h1>{"Welcome to Do-It-Later"}</h1>
 
             <div class="row">
-                <a href="https://tauri.app" target="_blank">
-                    <img src="public/tauri.svg" class="logo tauri" alt="Tauri logo"/>
-                </a>
-                <a href="https://yew.rs" target="_blank">
-                    <img src="public/yew.png" class="logo yew" alt="Yew logo"/>
+                <a href="https://wscneto.github.io" target="_blank">
+                    <img src="public/wn-icon.png" class="logo walter" alt="Walter logo"/>
                 </a>
             </div>
-            <p>{"Click on the Tauri and Yew logos to learn more."}</p>
+            <p>{"Click on the Walter logo to learn more."}</p>
 
             <form class="row" onsubmit={greet}>
                 <input id="greet-input" ref={greet_input_ref} placeholder="Enter a name..." />
